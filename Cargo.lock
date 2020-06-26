@@ -76,6 +76,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "block-buffer"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4152116fd6e9dadb291ae18fc1ec3575ed6d84c29642d97890f4b4a3417297e4"
+dependencies = [
+ "generic-array 0.14.1",
+]
+
+[[package]]
 name = "block-padding"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -163,6 +172,12 @@ checksum = "ddfc5b9aa5d4507acaf872de71051dfd0e309860e88966e1051e462a077aac4f"
 dependencies = [
  "bitflags",
 ]
+
+[[package]]
+name = "cpuid-bool"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6d375c433320f6c5057ae04a04376eef4d04ce2801448cf8863a78da99107be4"
 
 [[package]]
 name = "crc32fast"
@@ -319,7 +334,7 @@ dependencies = [
  "k256",
  "p256",
  "p384",
- "sha2 0.9.0",
+ "sha2 0.9.1",
  "signature",
 ]
 
@@ -647,6 +662,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2839e79665f131bdb5782e51f2c6c9599c133c6098982a54c794358bf432529c"
 
 [[package]]
+name = "opaque-debug"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "624a8340c38c1b80fd549087862da4ba43e08858af025b236e509b6649fc13d5"
+
+[[package]]
 name = "p256"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -933,19 +954,20 @@ dependencies = [
  "block-buffer 0.7.3",
  "digest 0.8.1",
  "fake-simd",
- "opaque-debug",
+ "opaque-debug 0.2.3",
 ]
 
 [[package]]
 name = "sha2"
-version = "0.9.0"
+version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "72377440080fd008550fe9b441e854e43318db116f90181eef92e9ae9aedab48"
+checksum = "2933378ddfeda7ea26f48c555bdad8bb446bf8a3d17832dc83e380d444cfb8c1"
 dependencies = [
- "block-buffer 0.8.0",
+ "block-buffer 0.9.0",
+ "cfg-if",
+ "cpuid-bool",
  "digest 0.9.0",
- "fake-simd",
- "opaque-debug",
+ "opaque-debug 0.3.0",
 ]
 
 [[package]]
@@ -958,7 +980,7 @@ dependencies = [
  "byte-tools",
  "digest 0.9.0",
  "keccak",
- "opaque-debug",
+ "opaque-debug 0.2.3",
 ]
 
 [[package]]
@@ -968,7 +990,7 @@ dependencies = [
  "ecdsa",
  "ed25519",
  "getrandom",
- "sha2 0.9.0",
+ "sha2 0.9.1",
  "signature",
  "subtle-encoding",
  "zeroize",
@@ -992,7 +1014,7 @@ dependencies = [
  "ed25519-dalek",
  "lazy_static",
  "ledger",
- "sha2 0.8.2",
+ "sha2 0.9.1",
  "signatory",
  "thiserror",
 ]
