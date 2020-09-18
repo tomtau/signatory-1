@@ -1,0 +1,21 @@
+[package]
+name = "signatory-sgx"
+version = "0.22.0"
+authors = ["Tomas Tauber <2410580+tomtau@users.noreply.github.com>", "Linfeng Yuan <linfeng@crypto.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+bincode = "1.3.1"
+ed25519 = { version = "1", features = ["serde"] }
+sgx-isa = "0.3"
+thiserror = "1.0"
+
+[target.'cfg(not(target_env = "sgx"))'.dependencies]
+aesm-client = { version = "0.5", features = ["sgxs"] }
+enclave-runner = "0.4"
+sgxs-loaders = "0.3"
+tokio = { version = "0.2", features = ["uds"] }
+signatory = { version = "0.22", features = ["digest", "ed25519"], path = ".."}

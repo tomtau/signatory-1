@@ -43,6 +43,8 @@ members = [
     "signatory-ledger-tm",
     "signatory-secp256k1",
     "signatory-sodiumoxide",
+    "signatory-sgx",
+    "signatory-sgx-app",
 ]
 
 [profile.release]
